@@ -1,5 +1,5 @@
 <x-layout>
     <x-slot name="title">
-        Sections
+        Dashboard
     </x-slot>
 </x-layout>

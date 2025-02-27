@@ -13,8 +13,9 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        $buildings = Building::all();
-        return view('buildings.index', compact('buildings'));
+        $perPage = 5;
+        $buildings = Building::paginate($perPage);
+        return view('buildings.index', compact(['buildings', 'perPage']));
     }
 
     /**
@@ -35,14 +36,6 @@ class BuildingController extends Controller
             'description' => $request->description
         ]);
         return redirect()->route('buildings.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Building $building)
-    {
-        return view('buildings.show', compact('building'));
     }
 
     /**
