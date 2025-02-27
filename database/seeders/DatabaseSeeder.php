@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             BuildingSeeder::class,
-            SectionSeeder::class
+            SectionSeeder::class,
+            EntityTypeSeeder::class
         ]);
     }
 }
