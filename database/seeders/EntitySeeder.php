@@ -2,20 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\EntityType;
+use App\Models\Entity;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class EntityTypeSeeder extends Seeder
+class EntitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        EntityType::create([
-            'name' => 'office',
-        ]);
-        EntityType::factory()->count(1)->create();
+        Entity::factory()->count(100)->create();
     }
 }
