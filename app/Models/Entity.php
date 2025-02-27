@@ -4,9 +4,11 @@ namespace App\Models;
 
 use App\Models\EntityType;
 use App\Models\Section;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Entity extends Model
 {
@@ -32,5 +34,10 @@ class Entity extends Model
     public function entityType(): BelongsTo
     {
         return $this->belongsTo(EntityType::class);
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
 }
