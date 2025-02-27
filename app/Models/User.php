@@ -50,6 +50,6 @@ class User extends Authenticatable
 
     public function entities(): BelongsToMany
     {
-        return $this->belongsToMany(Entity::class);
+        return $this->belongsToMany(Entity::class, 'entities_users');
     }
 }
