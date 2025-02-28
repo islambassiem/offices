@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSectionRequest;
 use App\Http\Requests\UpdateSectionRequest;
+use App\Models\Building;
 use App\Models\Section;
 
 class SectionController extends Controller
@@ -13,9 +14,10 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $sections = Section::all();
+        $perPage = 5;
+        $sections = Section::paginate($perPage);
 
-        return view('sections.index', compact('sections'));
+        return view('sections.index', compact(['sections', 'perPage']));
     }
 
     /**
@@ -23,7 +25,9 @@ class SectionController extends Controller
      */
     public function create()
     {
-        return view('sections.create');
+        $buildings = Building::all();
+
+        return view('sections.create', compact('buildings'));
     }
 
     /**
@@ -41,19 +45,13 @@ class SectionController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Section $section)
-    {
-        return view('sections.show', compact('section'));
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Section $section)
     {
-        return view('sections.edit', compact('section'));
+        $buildings = Building::all();
+
+        return view('sections.edit', compact(['section', 'buildings']));
     }
 
     /**
