@@ -19,6 +19,9 @@
                                     class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                                     placeholder="Entity Number">
                             </div>
+                            @error('number')
+                                <p class="mt-2 text-sm/6 text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -28,6 +31,9 @@
                             <textarea name="description" id="description" rows="3"
                                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">{{ $building->description }}</textarea>
                         </div>
+                        @error('description')
+                            <p class="mt-2 text-sm/6 text-red-600">{{ $message }}</p>
+                        @enderror
                         <p class="mt-3 text-sm/6 text-gray-600">Notes about the entity.</p>
                     </div>
 
