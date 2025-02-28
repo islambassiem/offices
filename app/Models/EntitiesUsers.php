@@ -10,6 +10,7 @@ class EntitiesUsers extends Model
 {
     /** @use HasFactory<\Database\Factories\EntitiesUsersFactory> */
     use HasFactory;
+
     use SoftDeletes;
 
     protected $table = 'entities_users';

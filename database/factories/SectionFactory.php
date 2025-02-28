@@ -18,6 +18,7 @@ class SectionFactory extends Factory
     public function definition(): array
     {
         $building_id = Building::inRandomOrder()->first()->id;
+
         return [
             'building_id' => $building_id,
             'number' => fake()->buildingNumber(),

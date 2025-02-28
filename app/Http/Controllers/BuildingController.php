@@ -15,6 +15,7 @@ class BuildingController extends Controller
     {
         $perPage = 5;
         $buildings = Building::paginate($perPage);
+
         return view('buildings.index', compact(['buildings', 'perPage']));
     }
 
@@ -33,8 +34,9 @@ class BuildingController extends Controller
     {
         Building::create([
             'number' => $request->number,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
+
         return redirect()->route('buildings.index');
     }
 
@@ -53,8 +55,9 @@ class BuildingController extends Controller
     {
         $building->update([
             'number' => $request->number,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
+
         return redirect()->route('buildings.index');
     }
 }

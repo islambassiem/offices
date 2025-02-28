@@ -14,6 +14,7 @@ class SectionController extends Controller
     public function index()
     {
         $sections = Section::all();
+
         return view('sections.index', compact('sections'));
     }
 
@@ -33,8 +34,9 @@ class SectionController extends Controller
         Section::create([
             'building_id' => $request->building_id,
             'number' => $request->number,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
+
         return redirect()->route('sections.index');
     }
 
@@ -62,8 +64,9 @@ class SectionController extends Controller
         $section->update([
             'building_id' => $request->building_id,
             'number' => $request->number,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
+
         return redirect()->route('sections.index');
     }
 }

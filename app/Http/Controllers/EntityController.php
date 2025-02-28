@@ -14,6 +14,7 @@ class EntityController extends Controller
     public function index()
     {
         $entities = Entity::with('section', 'entityType')->get();
+
         return view('entities.index', compact('entities'));
     }
 
@@ -38,6 +39,7 @@ class EntityController extends Controller
             'keys_count' => $request->keys_count,
             'description' => $request->description,
         ]);
+
         return redirect()->route('entities.index');
     }
 
@@ -70,6 +72,7 @@ class EntityController extends Controller
             'keys_count' => $request->keys_count,
             'description' => $request->description,
         ]);
+
         return redirect()->route('entities.index');
     }
 }

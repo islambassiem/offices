@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Building;
 use App\Models\Section;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SectionSeeder extends Seeder

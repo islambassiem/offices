@@ -14,6 +14,7 @@ class EntityTypeController extends Controller
     public function index()
     {
         $entityTypes = EntityType::all();
+
         return view('entityTypes.index', compact('entityTypes'));
     }
 
@@ -33,6 +34,7 @@ class EntityTypeController extends Controller
         EntityType::create([
             'name' => $request->name,
         ]);
+
         return redirect()->route('entityTypes.index');
     }
 
@@ -60,6 +62,7 @@ class EntityTypeController extends Controller
         $entityType->update([
             'name' => $request->name,
         ]);
+
         return redirect()->route('entityTypes.index');
     }
 }
