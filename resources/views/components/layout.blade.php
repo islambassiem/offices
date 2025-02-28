@@ -28,6 +28,7 @@
                                     aria-current="page">Dashboard</a>
                                 <x-nav-link route="buildings.index" title="Buildings" routeIs="buildings*" />
                                 <x-nav-link route="sections.index" title="Sections" routeIs="sections*" />
+                                <x-nav-link route="types.index" title="Entity Types" routeIs="types*" />
                                 <x-nav-link route="entities.index" title="Entities" routeIs="entities*" />
                             </div>
                         </div>

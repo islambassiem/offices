@@ -13,9 +13,10 @@ class EntityTypeController extends Controller
      */
     public function index()
     {
-        $entityTypes = EntityType::all();
+        $perPage = 5;
+        $types = EntityType::paginate($perPage);
 
-        return view('entityTypes.index', compact('entityTypes'));
+        return view('entityTypes.index', compact(['types', 'perPage']));
     }
 
     /**
@@ -35,34 +36,26 @@ class EntityTypeController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('entityTypes.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(EntityType $entityType)
-    {
-        return view('entityTypes.show', compact('entityType'));
+        return redirect()->route('types.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(EntityType $entityType)
+    public function edit(EntityType $type)
     {
-        return view('entityTypes.edit', compact('entityType'));
+        return view('entityTypes.edit', compact('type'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEntityTypeRequest $request, EntityType $entityType)
+    public function update(UpdateEntityTypeRequest $request, EntityType $type)
     {
-        $entityType->update([
+        $type->update([
             'name' => $request->name,
         ]);
 
-        return redirect()->route('entityTypes.index');
+        return redirect()->route('types.index');
     }
 }

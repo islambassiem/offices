@@ -11,6 +11,6 @@ Route::get('/', function () {
 })->name('dashboard');
 
 Route::resource('buildings', BuildingController::class)->except(['destroy', 'show']);
-Route::resource('sections', SectionController::class)->except('destroy');
-Route::resource('entity-types', EntityTypeController::class)->except('destroy');
-Route::resource('entities', EntityController::class)->except('destroy');
+Route::resource('sections', SectionController::class)->except(['destroy', 'show']);
+Route::resource('types', EntityTypeController::class)->except(['destroy', 'show']);
+Route::resource('entities', EntityController::class)->except(['destroy', 'show']);
