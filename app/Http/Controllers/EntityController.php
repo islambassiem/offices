@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEntityRequest;
 use App\Http\Requests\UpdateEntityRequest;
+use App\Models\Building;
 use App\Models\Entity;
+use App\Models\EntityType;
+use App\Models\Section;
 
 class EntityController extends Controller
 {
@@ -13,9 +16,10 @@ class EntityController extends Controller
      */
     public function index()
     {
-        $entities = Entity::with('section', 'entityType')->get();
+        $perPage = 5;
+        $entities = Entity::with('section', 'entityType')->paginate($perPage);
 
-        return view('entities.index', compact('entities'));
+        return view('entities.index', compact(['entities', 'perPage']));
     }
 
     /**
@@ -23,7 +27,15 @@ class EntityController extends Controller
      */
     public function create()
     {
-        return view('entities.create');
+        $buildings = Building::all();
+        $sections  = Section::all();
+        $types     = EntityType::all();
+        return view('entities.create',
+            compact(
+                'buildings',
+                'sections',
+                'types',
+            ));
     }
 
     /**
@@ -32,6 +44,7 @@ class EntityController extends Controller
     public function store(StoreEntityRequest $request)
     {
         Entity::create([
+            'building_id' => $request->building_id,
             'section_id' => $request->section_id,
             'entity_type_id' => $request->entity_type_id,
             'number' => $request->number,
@@ -56,7 +69,16 @@ class EntityController extends Controller
      */
     public function edit(Entity $entity)
     {
-        return view('entities.edit', compact('entity'));
+        $buildings = Building::all();
+        $sections  = Section::all();
+        $types     = EntityType::all();
+        return view('entities.edit',
+            compact(
+                'entity',
+                'buildings',
+                'sections',
+                'types',
+            ));
     }
 
     /**
@@ -64,6 +86,7 @@ class EntityController extends Controller
      */
     public function update(UpdateEntityRequest $request, Entity $entity)
     {
+        return $request;
         $entity->update([
             'section_id' => $request->section_id,
             'entity_type_id' => $request->entity_type_id,

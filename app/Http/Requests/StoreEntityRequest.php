@@ -22,6 +22,7 @@ class StoreEntityRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'building_id' => 'required|exists:buildings,id',
             'entity_type_id' => 'required|exists:entity_types,id',
             'section_id' => 'required|exists:sections,id',
             'number' => 'required|max:255',

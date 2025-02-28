@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Building;
 use App\Models\EntityType;
 use App\Models\Section;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -19,6 +20,7 @@ class EntityFactory extends Factory
     public function definition(): array
     {
         return [
+            'building_id' => Building::inRandomOrder()->first()->id,
             'entity_type_id' => EntityType::inRandomOrder()->first()->id,
             'section_id' => Section::inRandomOrder()->first()->id,
             'number' => fake()->buildingNumber(),

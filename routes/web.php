@@ -13,4 +13,4 @@ Route::get('/', function () {
 Route::resource('buildings', BuildingController::class)->except(['destroy', 'show']);
 Route::resource('sections', SectionController::class)->except(['destroy', 'show']);
 Route::resource('types', EntityTypeController::class)->except(['destroy', 'show']);
-Route::resource('entities', EntityController::class)->except(['destroy', 'show']);
+Route::resource('entities', EntityController::class)->except(['destroy']);

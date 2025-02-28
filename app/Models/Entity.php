@@ -15,6 +15,7 @@ class Entity extends Model
     protected $table = 'entities';
 
     protected $fillable = [
+        'building_id',
         'section_id',
         'entity_type_id',
         'number',

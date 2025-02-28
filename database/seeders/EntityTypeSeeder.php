@@ -12,9 +12,7 @@ class EntityTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        EntityType::create([
-            'name' => 'office',
-        ]);
-        EntityType::factory()->count(1)->create();
+        EntityType::create(['name' => 'office']);
+        EntityType::create(['name' => 'lab']);
     }
 }

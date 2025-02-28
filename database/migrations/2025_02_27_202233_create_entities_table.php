@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Building;
 use App\Models\EntityType;
 use App\Models\Section;
 use Illuminate\Database\Migrations\Migration;
@@ -15,10 +16,11 @@ return new class extends Migration
     {
         Schema::create('entities', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Building::class)->constrained();
             $table->foreignIdFor(Section::class)->constrained();
             $table->foreignIdFor(EntityType::class)->constrained();
             $table->string('number');
-            $table->boolean('singularity')->nullable(false);
+            $table->boolean('singularity')->default(0);
             $table->string('keys_count')->nullable(0);
             $table->text('description')->nullable();
             $table->timestamps();
