@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Building;
+use App\Models\Section;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,11 +17,10 @@ class SectionFactory extends Factory
      */
     public function definition(): array
     {
-        $building_id = Building::inRandomOrder()->first()->id;
+        $number = Section::inRandomOrder()->first()->id;
 
         return [
-            'building_id' => $building_id,
-            'number' => fake()->buildingNumber(),
+            'number' => $number,
             'description' => fake()->text(),
         ];
     }

@@ -10,6 +10,8 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::redirect('/', 'buildings');
+
 Route::resource('buildings', BuildingController::class)->except(['destroy', 'show']);
 Route::resource('sections', SectionController::class)->except(['destroy', 'show']);
 Route::resource('types', EntityTypeController::class)->except(['destroy', 'show']);

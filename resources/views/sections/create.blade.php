@@ -23,22 +23,6 @@
                         </div>
                     </div>
 
-                    <div class="sm:col-span-2">
-                        <label for="building_id" class="block text-sm font-medium text-gray-900">Label</label>
-                        <select id="building_id"
-                            name="building_id"
-                            class="py-2 px-4 pe-9 mt-2 block w-full bg-white border-gray-200 border-2 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none ">
-                            <option selected="">Building No</option>
-                            @foreach ($buildings as $building)
-                                <option value="{{ $building->id }}">{{ $building->number }}</option>
-                            @endforeach
-                        </select>
-                        @error('building_id')
-                            <p class="mt-2 text-sm/6 text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-
                     <div class="col-span-full">
                         <label for="description" class="block text-sm/6 font-medium text-gray-900">Description</label>
                         <div class="mt-2">

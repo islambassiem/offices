@@ -15,7 +15,7 @@
                     <div class="px-4 py-6 col-span-6 sm:gap-4 sm:px-0 flex justify-between">
                         <dt class="text-sm/6 font-medium text-gray-900">Building Number</dt>
                         <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-                            {{ $entity->section->building->number }}</dd>
+                            {{ $entity->building_id }}</dd>
                     </div>
                     <div class="px-4 py-6 col-span-6 sm:gap-4 sm:px-0 flex justify-between">
                         <dt class="text-sm/6 font-medium text-gray-900">Section</dt>

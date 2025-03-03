@@ -23,9 +23,9 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="{{ route('dashboard') }}"
+                                {{-- <a href="{{ route('dashboard') }}"
                                     class="{{ request()->routeIs('dashboard*') ? 'bg-gray-900 text-white' : '' }} rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                                    aria-current="page">Dashboard</a>
+                                    aria-current="page">Dashboard</a> --}}
                                 <x-nav-link route="buildings.index" title="Buildings" routeIs="buildings*" />
                                 <x-nav-link route="sections.index" title="Sections" routeIs="sections*" />
                                 <x-nav-link route="types.index" title="Entity Types" routeIs="types*" />

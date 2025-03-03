@@ -14,7 +14,7 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $perPage = 5;
+        $perPage = 10;
         $sections = Section::paginate($perPage);
 
         return view('sections.index', compact(['sections', 'perPage']));
@@ -25,9 +25,7 @@ class SectionController extends Controller
      */
     public function create()
     {
-        $buildings = Building::all();
-
-        return view('sections.create', compact('buildings'));
+        return view('sections.create');
     }
 
     /**
@@ -36,7 +34,6 @@ class SectionController extends Controller
     public function store(StoreSectionRequest $request)
     {
         Section::create([
-            'building_id' => $request->building_id,
             'number' => $request->number,
             'description' => $request->description,
         ]);

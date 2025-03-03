@@ -12,6 +12,7 @@ class SectionSeeder extends Seeder
      */
     public function run(): void
     {
-        Section::factory()->count(20)->create();
+        Section::create(['number' => 'A', 'description' => 'Male building']);
+        Section::create(['number' => 'B', 'description' => 'Female building']);
     }
 }

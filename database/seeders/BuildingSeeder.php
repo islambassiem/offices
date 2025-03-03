@@ -12,6 +12,8 @@ class BuildingSeeder extends Seeder
      */
     public function run(): void
     {
-        Building::factory()->count(10)->create();
+        for ($i = 0; $i < 8; $i++) {
+            Building::create(['number' => $i + 1, 'description' => 'Building ' . $i + 1]);
+        }
     }
 }

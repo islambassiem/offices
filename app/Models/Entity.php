@@ -38,4 +38,9 @@ class Entity extends Model
     {
         return $this->belongsToMany(User::class, 'entities_users');
     }
+
+    public function building(): BelongsTo
+    {
+        return $this->belongsTo(Building::class);
+    }
 }

@@ -16,10 +16,7 @@ class EntityController extends Controller
      */
     public function index()
     {
-        $perPage = 5;
-        $entities = Entity::with('section', 'entityType')->paginate($perPage);
-
-        return view('entities.index', compact(['entities', 'perPage']));
+        return view('entities.index');
     }
 
     /**

@@ -22,7 +22,7 @@ class UpdateBuildingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'number' => 'required|max:255',
+            'number' => 'required|unique:buildings,number',
             'description' => 'nullable|string',
         ];
     }

@@ -13,7 +13,7 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        $perPage = 5;
+        $perPage = 10;
         $buildings = Building::paginate($perPage);
 
         return view('buildings.index', compact(['buildings', 'perPage']));

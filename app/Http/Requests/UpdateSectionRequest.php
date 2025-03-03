@@ -22,8 +22,7 @@ class UpdateSectionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'building_id' => 'required|exists:buildings,id',
-            'number' => 'required|max:255',
+            'number' => 'required|unique:sections,number|max:255',
             'description' => 'nullable|string',
         ];
     }

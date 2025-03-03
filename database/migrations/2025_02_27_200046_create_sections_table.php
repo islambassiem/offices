@@ -14,7 +14,6 @@ return new class extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Building::class)->constrained();
             $table->string('number');
             $table->string('description')->nullable();
             $table->timestamps();

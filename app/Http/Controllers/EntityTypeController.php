@@ -13,7 +13,7 @@ class EntityTypeController extends Controller
      */
     public function index()
     {
-        $perPage = 5;
+        $perPage = 10;
         $types = EntityType::paginate($perPage);
 
         return view('entityTypes.index', compact(['types', 'perPage']));
