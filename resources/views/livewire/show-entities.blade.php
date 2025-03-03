@@ -113,7 +113,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $entities->links() }}
+                    {{ $entities->links('vendor.pagination.tailwind') }}
                 </div>
             </div>
         </div>
