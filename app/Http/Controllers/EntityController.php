@@ -45,7 +45,7 @@ class EntityController extends Controller
             'section_id' => $request->section_id,
             'entity_type_id' => $request->entity_type_id,
             'number' => $request->number,
-            'singularity' => $request->singularity,
+            'singularity' => $request->singularity ?? 0,
             'keys_count' => $request->keys_count,
             'description' => $request->description,
         ]);
