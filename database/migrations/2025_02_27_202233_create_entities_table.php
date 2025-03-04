@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(Section::class)->constrained();
             $table->foreignIdFor(EntityType::class)->constrained();
             $table->string('number');
-            $table->boolean('singularity')->default(0);
+            $table->boolean('singularity')->nullable(0);
             $table->string('keys_count')->nullable(0);
             $table->text('description')->nullable();
             $table->timestamps();
