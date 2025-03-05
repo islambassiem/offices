@@ -26,7 +26,7 @@ class StoreEntityRequest extends FormRequest
             'entity_type_id' => 'required|exists:entity_types,id',
             'section_id' => 'required|exists:sections,id',
             'number' => 'required|max:255',
-            'singularity' => 'required_if:entity_type_id,1',
+            'singularity' => 'nullable',
             'keys_count' => 'required',
             'description' => 'nullable|max:255',
         ];
